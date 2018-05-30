@@ -24,9 +24,9 @@ public class Main extends Configured implements Tool {
         System.out.println("state=" + commandLine.getOptionValue("state"));
         System.out.println("output=" + commandLine.getOptionValue("o"));
         System.out.println("max=" + commandLine.getOptionValue("m"));
-        System.out.println("number" + commandLine.getOptionValue("number"));
-        System.out.println("delta" + commandLine.getOptionValue("delta"));
-        System.out.println("distance" + commandLine.getOptionValue("distance"));
+        System.out.println("number=" + commandLine.getOptionValue("number"));
+        System.out.println("delta=" + commandLine.getOptionValue("delta"));
+        System.out.println("distance=" + commandLine.getOptionValue("distance"));
         System.out.println("####################");
     }
 
