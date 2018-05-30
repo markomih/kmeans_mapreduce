@@ -11,9 +11,9 @@ public class Main extends Configured implements Tool {
         options.addOption(new Option("s", "state", true, "Path to the input clusters data"));
         options.addOption(new Option("n", "number", true, "Number of reducers to suggest to the Hadoop job/n"));
         options.addOption(new Option("o", "output", true, "Path to write the output for iteration n - i.e. output/n"));
-        options.addOption(new Option("d", "delta", true, "Delta definining the maximum difference between the last and current centroids"));
+        options.addOption(new Option("d", "delta", true, "The maximum difference between the last and current centroids"));
         options.addOption(new Option("m", "max", true, "Maximum number of iterations"));
-        options.addOption(new Option("dist", "distance", true, "Distance measure"));
+        options.addOption(new Option("dist", "distance", true, "Similarity measure"));
 
         return options;
     }
