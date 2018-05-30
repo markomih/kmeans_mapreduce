@@ -4,7 +4,7 @@ import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-public class Main implements Tool {
+public class Main extends Configured implements Tool {
     private static Options getOptions() {
         Options options = new Options();
         options.addOption(new Option("i", "input", true, "Path to the input points data"));
@@ -54,7 +54,11 @@ public class Main implements Tool {
         conf.setInt("max", Integer.valueOf(commandLine.getOptionValue("max")));
 
         // execute several MapReduce programs until kmeans converge
-        
+        Algorithm kmeans = new Algorithm(conf);
+        while (!kmeans.converged()){
+            kmeans.createNextJobIteration();
+            if (!kmeans.runCurrJob()) throw new Exception("Current job failed!");
+        }
 
         return 0;
     }

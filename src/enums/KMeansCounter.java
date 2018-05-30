@@ -1,4 +1,5 @@
 package enums;
 
-public class KMeansCounter {
+public enum KMeansCounter {
+    ADJUSTED
 }
