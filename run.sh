@@ -1,14 +1,27 @@
 #!/usr/bin/env bash
 
+# create directories on hdfs
+hadoop fs -mkdir -p /KMeans/Resources/Input
+hadoop fs -mkdir -p /KMeans/Resources/Output
+
+# copy local input files
+hadoop fs -put ./Resources/Input/points.txt ./Resources/Input/clusters.txt /KMeans/Resources/Input/
+
+# remove output files if any
+hadoop fs -rm -r -f /KMeans/Resources/Output/*
+
+# specify input parameters
 JAR_PATH=./executable_jar/kmeans_mapreduce.jar
-STATE_PATH=./Resources/Input/clusters.txt
+MAIN_CLASS=Main
+INPUT_FILE_PATH=/KMeans/Resources/Input/points.txt
+STATE_PATH=/KMeans/Resources/Input/clusters.txt
 NUMBER_OF_REDUCERS=3
-OUTPUT_DIR=./Resources/Output
+OUTPUT_DIR=/KMeans/Resources/Output
 DELTA=100000000.0
 MAX_ITERATIONS=10
 DISTANCE=eucl
 
-java -jar ${JAR_PATH} --input ./Resources/Input/points.txt \
+hadoop jar ${JAR_PATH} ${MAIN_CLASS} --input ${INPUT_FILE_PATH} \
 --state ${STATE_PATH} \
 --number ${NUMBER_OF_REDUCERS} \
 --output ${OUTPUT_DIR} \
@@ -16,8 +29,8 @@ java -jar ${JAR_PATH} --input ./Resources/Input/points.txt \
 --max ${MAX_ITERATIONS} \
 --distance ${DISTANCE}
 
-LAST_DIR="$(ls -v -r ${OUTPUT_DIR} | head -1)"
-LAST_DIR_PATH="$OUTPUT_DIR/$LAST_DIR/part-r-[0-9][0-9][0-9][0-9][0-9]"
-POINTS="$(cat ${LAST_DIR_PATH} | sort -n)"
+# execute jar file
+LAST_DIR="$(hadoop fs -ls -t -C /KMeans/Resources/Output | head -1)"
 
-tput setaf 1; echo ${POINTS}; tput sgr0
+# print results
+hadoop fs -cat "$LAST_DIR/part-r-[0-9][0-9][0-9][0-9][0-9]" | sort --numeric --key 1
