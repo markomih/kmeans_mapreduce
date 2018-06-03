@@ -16,11 +16,8 @@ The figure below denotes one iteration of MapReduce program.
 
 ![alt text][flow]
 
-First, the centroids and context (configuration) are loaded in distributed cache. This is done by overriding setup function in the Mapper and Reducer class. 
-Afterwards, the ```input``` data file is split and each data point is processed by on of the map functions (in Map process). The function writas key value pairs <Centroid, Point>, where the Centroid is the closest one to the Point. 
-Next, combiner is used in order to decrease the number of local writings. In this phase data points that are on the same machine are summed up and the number of those data points is recorded, Point.number variable. 
-Now, for the optimization reasons output values are automaticaly shuffled and sorted by Centroids. The Reducer performs the same procedure as the Combiner, but it also checks whether centroids converged. If they did, than global Counter is incremented. 
-After the one iteration is done, the program checks two conditions, if the program reached the maximum number of iterations, and if the Counter value is unchanged. If one of these conditions is satisfied than the program is finished, otherwise the whole MapReduce process is run again with the updated centroids. 
+First, Centroids and Context (Configuration) are loaded into the Distributed Cache. This is done by overriding setup function in the Mapper and Reducer class. Afterwards, the input data file is split and each data point is processed by one of the map functions (in Map process). The function writes key-value pairs <Centroid, Point>, where the Centroid is the closest one to the Point. Next, Combiner is used in order to decrease the number of local writings. In this phase data points that are on the same machine are summed up and the number of those data points is recorded, Point.number variable. Now, for the optimization reasons output values are automatically shuffled and sorted by Centroids. The Reducer performs the same procedure as the Combiner, but it also checks whether centroids converged. If they did, then global Counter is incremented. 
+After the one iteration is done, the program checks two conditions, if the program reached the maximum number of iterations, and if the Counter value is unchanged. If one of these conditions is satisfied, then the program is finished, otherwise, the whole MapReduce process is run again with the updated centroids.
 
 ## Examples
 One of the use-cases of k-means algorihtm is the clor quantization process, reducing the number of distinct colors of an image.
