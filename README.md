@@ -53,11 +53,11 @@ Numerical (RGB) values of images Fig. 1 are saved as input data Fig. 2, and clus
 ![alt text][fig6]
 
 
-[flow]: https://github.com/Maki94/cloud-computing/blob/master/kmeans_mapreduce_tutorial/alg.png "One MapReduce iteration"
+[flow]: https://github.com/Maki94/cloud-computing/blob/master/figures/alg.png "One MapReduce iteration"
 
-[fig1]: https://github.com/Maki94/cloud-computing/blob/master/kmeans_mapreduce_tutorial/fig1.PNG "Original images"
-[fig2]: https://github.com/Maki94/cloud-computing/blob/master/kmeans_mapreduce_tutorial/fig2.PNG "RGB model"
-[fig3]: https://github.com/Maki94/cloud-computing/blob/master/kmeans_mapreduce_tutorial/fig3.PNG "10th iteration, 10 clusters"
-[fig4]: https://github.com/Maki94/cloud-computing/blob/master/kmeans_mapreduce_tutorial/fig4.PNG "Different number of clusters, 10th iteration"
-[fig5]: https://github.com/Maki94/cloud-computing/blob/master/kmeans_mapreduce_tutorial/fig5.PNG "Different number of iterations, 10 clusters"
-[fig6]: https://github.com/Maki94/cloud-computing/blob/master/kmeans_mapreduce_tutorial/fig6.PNG "Different number of iterations, 10 clusters"
+[fig1]: https://github.com/Maki94/cloud-computing/blob/master/figures/fig1.PNG "Original images"
+[fig2]: https://github.com/Maki94/cloud-computing/blob/master/figures/fig2.PNG "RGB model"
+[fig3]: https://github.com/Maki94/cloud-computing/blob/master/figures/fig3.PNG "10th iteration, 10 clusters"
+[fig4]: https://github.com/Maki94/cloud-computing/blob/master/figures/fig4.PNG "Different number of clusters, 10th iteration"
+[fig5]: https://github.com/Maki94/cloud-computing/blob/master/figures/fig5.PNG "Different number of iterations, 10 clusters"
+[fig6]: https://github.com/Maki94/cloud-computing/blob/master/figures/fig6.PNG "Different number of iterations, 10 clusters"
