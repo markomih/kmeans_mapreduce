@@ -38,11 +38,11 @@ Numerical (RGB) values of images (Fig. 1) are saved as input data (Fig. 2), and 
 
 ![alt text][fig3]
 
-### Modified images for different number of centroids 
+### Modified images for a different number of centroids 
 
 ![alt text][fig4]
 
-### Modified images for different number of iterations and 10 centroids 
+### Modified images for a different number of iterations and 10 centroids 
 
 ![alt text][fig5]
 
