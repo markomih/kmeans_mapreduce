@@ -1,5 +1,5 @@
 # K-means MapReduce implementation
-In this work clustering algorithm *k-means* is implemented using MapReduce (Hadoop ver. 2.8) fremework. 
+In this work k-means clustering algorithm is implemented using MapReduce (Hadoop version 2.8) framework.
 
 To run the program, shell script ```run.sh``` should be executed. It requires path to jar file and its input parameters which are:
 
@@ -7,7 +7,7 @@ To run the program, shell script ```run.sh``` should be executed. It requires pa
 * ```state``` - path to file that contains clusters 
 * ```number``` - number of reducers 
 * ```output``` - output directory 
-* ```delta``` - convergence threshold (acceptable difference between 2 subsequent centroids)
+* ```delta``` - threshold convergence (acceptable difference between 2 subsequent centroids)
 * ```max``` - maximum number of iterations 
 * ```distance``` - similairty measure (currently only Euclidean distance is supported)
 
